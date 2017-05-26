@@ -1,0 +1,17 @@
+version: "2.0"
+services:
+  elasticsearch:
+    image: elasticsearch:2-alpine
+    volumes:
+      - ./config:/usr/share/elasticsearch/config
+    ports:
+      - 9200:9200
+      - 9300:9300
+    links:
+      - grafana
+  grafana:
+    image: grafana/grafana:master
+    ports:
+      - 3000:3000
+    environment:
+      - "GF_SECURITY_ADMIN_PASSWORD=secret"

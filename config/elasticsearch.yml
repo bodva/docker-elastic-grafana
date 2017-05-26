@@ -1,0 +1,7 @@
+network.host: 0.0.0.0
+
+#Kibana 3 and Elasticsearch 1.4 - CORS problem
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+discovery.zen.minimum_master_nodes: 1
